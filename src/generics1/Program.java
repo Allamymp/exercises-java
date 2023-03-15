@@ -2,6 +2,7 @@ package generics1;
 
 import java.util.Scanner;
 
+// first generics exercise
 public class Program {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

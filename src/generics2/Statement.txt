@@ -1,0 +1,5 @@
+A consulting firm wants to evaluate the performance of products,
+employees, among other things. One of the calculations she needs is to find
+the largest of a set of elements. Write a program that reads a
+set of products from a fi, and then
+show the most expensive of them.
