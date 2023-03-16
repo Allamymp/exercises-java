@@ -1,4 +1,6 @@
-package generics1;
+package generics1.application;
+
+import generics1.services.PrintService;
 
 import java.util.Scanner;
 
