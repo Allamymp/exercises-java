@@ -10,6 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Program {
 
@@ -19,6 +20,7 @@ public class Program {
         Path path = Paths.get("C:\\Programacao\\Workspace\\exercicios_4\\src\\generics2\\FileExercise.csv");
 
         String pathStr = path.toAbsolutePath().toString();
+        Locale.setDefault(Locale.US);
 
         List<Product> productsList = new ArrayList<>();
 
@@ -26,9 +28,8 @@ public class Program {
 
             String line = br.readLine();
             while(line != null){
-                String[] atribute = line.split(",");
-                productsList.add(new Product(atribute[0],Double.parseDouble(atribute[1])));
-                System.out.println(productsList);
+                String[] fields = line.split(",");
+                productsList.add(new Product(fields[0],Double.parseDouble(fields[1])));
                 line= br.readLine();
 
 
@@ -41,7 +42,7 @@ public class Program {
         }
 
         Product mostExpensive = CalculationService.calculateExpensive(productsList);
-        System.out.println("MAX:");
+        System.out.println("Most expensive:");
         System.out.println(mostExpensive.toString());
 
     }

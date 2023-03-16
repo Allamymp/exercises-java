@@ -1,6 +1,6 @@
 package generics2.entities;
 
-public class Product {
+public class Product implements Comparable<Product>{
 
     private String name;
     private Double price;
@@ -29,9 +29,14 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "name='" + name + '\'' +
-                ", price=" + price +
-                '}';
+        System.out.println("Name: " + getName());
+        System.out.printf("Price: %.2f", getPrice());
+
+        return "";
+    }
+
+    @Override
+    public int compareTo(Product other) {
+        return price.compareTo(other.getPrice());
     }
 }

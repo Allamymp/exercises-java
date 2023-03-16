@@ -10,17 +10,16 @@ public class CalculationService<T>   {
     private List<Product> products;
 
 
-    public static Product calculateExpensive(List<Product> products ) {
+    public static <T extends Comparable<? super T>> T calculateExpensive(List<T > products ) {
 
         if (products.isEmpty()) {
             throw new IllegalStateException("Empty list!");
         }
 
-        Product max = products.get(0);
-        for (Product price : products) {
-            if (price.getPrice() > max.getPrice()) {
-                max.setPrice(price.getPrice());
-                max.setName(price.getName());
+        T max = products.get(0);
+        for (T price : products) {
+            if (price.compareTo(max)>0) {
+                max = price;
             }
 
         }
